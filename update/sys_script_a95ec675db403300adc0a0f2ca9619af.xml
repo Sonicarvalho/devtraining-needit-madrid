@@ -33,7 +33,7 @@
 	// the u_when_needed value.
 	var niutils = new NeedItUtils();
 	var isPast = niutils.isDatePast(current.u_when_needed);
-	var days = niutils.nrDaysFromNow(current.u_when_needed);
+	var isToday = niutils.isDateToday(current.u_when_needed);
 	
 	if(isPast == true){
 		gs.addErrorMessage("When needed date cannot be in the past.  Your request has not been saved to the database.");
@@ -41,7 +41,7 @@
 	}
 	
 	// If the isDatePast method returns true, the date is in the past.
-	else if(days == 0){
+	else if(isToday == true){
 		gs.addErrorMessage("Can't submit requests on the same day bitch, you're not Sonic The Hedgehog");
 		current.setAbortAction(true);
 	}
@@ -53,7 +53,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a95ec675db403300adc0a0f2ca9619af</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>NeedIt When needed field date</sys_name>
         <sys_overrides/>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
@@ -61,7 +61,7 @@
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_script_a95ec675db403300adc0a0f2ca9619af</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-03-13 11:39:59</sys_updated_on>
+        <sys_updated_on>2019-03-13 12:00:47</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>
